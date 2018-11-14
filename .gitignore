@@ -1,0 +1,13 @@
+
+# IntelliJ #
+############
+*.iml
+.idea
+
+# Maven #
+#########
+target
+
+# Binary Downloads #
+####################
+/src/main/resources/drivers/
