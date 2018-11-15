@@ -3,6 +3,7 @@ package com.example.selenium.tests;
 import com.example.pages.LoginPage;
 import com.example.pages.RegisterPage;
 import com.example.pages.WelcomePage;
+import com.example.selenium.tests.base.SeleniumBase;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;

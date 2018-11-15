@@ -1,0 +1,36 @@
+# Usage:
+#   docker-compose up --force-recreate
+version: '2.1'
+
+services:
+  #--------------#
+  zalenium:
+    image: "dosel/zalenium"
+    container_name: zalenium
+    hostname: zalenium
+    tty: true
+    volumes:
+      - /tmp/videos:/home/seluser/videos
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+    ports:
+      - 4444:4444
+    command: >
+      start --desiredContainers 2
+            --maxDockerSeleniumContainers 10
+            --screenWidth 1280 --screenHeight 800
+            --timeZone "Europe/Berlin"
+            --videoRecordingEnabled false
+            --sauceLabsEnabled false
+            --browserStackEnabled false
+            --testingBotEnabled false
+            --startTunnel false
+    environment:
+      - HOST_UID
+      - HOST_GID
+      - SAUCE_USERNAME
+      - SAUCE_ACCESS_KEY
+      - BROWSER_STACK_USER
+      - BROWSER_STACK_KEY
+      - TESTINGBOT_KEY
+      - TESTINGBOT_SECRET

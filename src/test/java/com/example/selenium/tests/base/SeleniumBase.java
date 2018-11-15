@@ -1,4 +1,4 @@
-package com.example.selenium.tests;
+package com.example.selenium.tests.base;
 
 import com.example.config.DriverBase;
 import org.testng.annotations.AfterMethod;
