@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public abstract class BasePage<T extends LoadableComponent<T>> extends LoadableComponent<T>  {
 	private WebDriver driver;
 	private WebDriverWait wait;
-	private static final String BASE_URL = "http://localhost:8080";
+	private static final String BASE_URL = "http://10.39.18.93:8080";
 
 	public BasePage() {
 		this.driver = DriverBase.get().getDriver();

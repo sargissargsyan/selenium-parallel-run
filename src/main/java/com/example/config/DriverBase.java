@@ -4,6 +4,12 @@ package com.example.config;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class DriverBase {
 	public static DriverBase get() {
@@ -12,6 +18,7 @@ public class DriverBase {
 
 	public WebDriver driver;
 	private static final String BROWSER = System.getProperty("selenium.browser", "chrome");
+	private static final String REMOTE = System.getProperty("selenium.remote", "false");
 	private static ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
 
 	public WebDriver getDriver() {
@@ -20,7 +27,11 @@ public class DriverBase {
 				case "chrome":
 					System.setProperty("webdriver.chrome.driver",
 						"./src/main/resources/drivers/chromedriver-mac-64bit");
-					driver = new ChromeDriver();
+					if (Boolean.valueOf(REMOTE)) {
+						driver = initRemoteDriver(DesiredCapabilities.chrome());
+					} else {
+						driver = new ChromeDriver();
+					}
 					driverThread.set(driver);
 					break;
 
@@ -33,6 +44,19 @@ public class DriverBase {
 			}
 		}
 		return driverThread.get();
+	}
+
+	public RemoteWebDriver initRemoteDriver(DesiredCapabilities capability) {
+		DesiredCapabilities caps = DesiredCapabilities.chrome();
+		caps.setCapability("platform", "Windows 7");
+		RemoteWebDriver remoteDriver = null;
+		try {
+			remoteDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+
+		return remoteDriver;
 	}
 
 	public void quitDriver(WebDriver driver) {
