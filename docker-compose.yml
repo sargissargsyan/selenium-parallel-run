@@ -20,7 +20,7 @@ services:
             --maxDockerSeleniumContainers 10
             --screenWidth 1280 --screenHeight 800
             --timeZone "Europe/Berlin"
-            --videoRecordingEnabled false
+            --videoRecordingEnabled true
             --sauceLabsEnabled false
             --browserStackEnabled false
             --testingBotEnabled false
