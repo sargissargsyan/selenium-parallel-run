@@ -16,7 +16,7 @@ services:
     ports:
       - 4444:4444
     command: >
-      start --desiredContainers 10
+      start --desiredContainers 3
             --maxDockerSeleniumContainers 10
             --screenWidth 1280 --screenHeight 800
             --timeZone "Europe/Berlin"
