@@ -37,7 +37,11 @@ public class DriverBase {
 				case "firefox":
 					System.setProperty("webdriver.gecko.driver",
 						"./src/main/resources/drivers/geckodriver-mac-64bit");
-					driver = new FirefoxDriver();
+					if (Boolean.valueOf(REMOTE)) {
+						driver = initRemoteDriver(DesiredCapabilities.firefox());
+					} else {
+						driver = new FirefoxDriver();
+					}
 					driverThread.set(driver);
 					break;
 			}
@@ -46,8 +50,6 @@ public class DriverBase {
 	}
 
 	public RemoteWebDriver initRemoteDriver(DesiredCapabilities capability) {
-		DesiredCapabilities caps = DesiredCapabilities.chrome();
-		caps.setCapability("platform", "Windows 7");
 		RemoteWebDriver remoteDriver = null;
 		try {
 			remoteDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
