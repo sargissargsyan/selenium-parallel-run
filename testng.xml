@@ -1,3 +1,4 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite-3" verbose="1">
 	<test name="all-packages" parallel="methods" thread-count="6">
 		<packages>

@@ -1,6 +1,5 @@
 package com.example.config;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,7 +16,7 @@ public class DriverBase {
 
 	public WebDriver driver;
 	private static final String BROWSER = System.getProperty("selenium.browser", "chrome");
-	private static final String REMOTE = System.getProperty("selenium.remote", "false");
+	private static final String REMOTE = System.getProperty("selenium.remote", "true");
 	private static ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
 
 	public WebDriver getDriver() {
@@ -49,10 +48,10 @@ public class DriverBase {
 		return driverThread.get();
 	}
 
-	public RemoteWebDriver initRemoteDriver(DesiredCapabilities capability) {
+	public RemoteWebDriver initRemoteDriver(DesiredCapabilities capabilities) {
 		RemoteWebDriver remoteDriver = null;
 		try {
-			remoteDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+			remoteDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
