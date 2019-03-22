@@ -1,7 +1,8 @@
-This is example that was used during SQA Days 24
+Example of Selenium Parallel Run  
 =======================
 
 [Easy Setup for Parallel Test Execution with Selenium Docker](https://sqadays.com/en/talk/62825)
+[How to Dockerize Parallel Execution of Selenium Tests](https://sqadays.eu/en/talk/69114)
 
 How to run:
 1. Open a terminal
