@@ -16,7 +16,7 @@ public class DriverBase {
 
 	public WebDriver driver;
 	private static final String BROWSER = System.getProperty("selenium.browser", "chrome");
-	private static final String REMOTE = System.getProperty("selenium.remote", "true");
+	private static final String REMOTE = System.getProperty("selenium.remote", "false");
 	private static ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
 
 	public WebDriver getDriver() {
