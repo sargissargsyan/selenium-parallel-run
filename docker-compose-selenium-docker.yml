@@ -4,7 +4,7 @@ version: '2'
 services:
 
   chrome:
-    image: selenium/node-chrome:3.141.59-lithium
+    image: selenium/node-chrome:3.141.59-vanadium
     volumes:
       - /dev/shm:/dev/shm
     depends_on:
@@ -13,6 +13,6 @@ services:
       HUB_HOST: hub
 
   hub:
-    image: selenium/hub:3.141.59-lithium
+    image: selenium/hub:3.141.59-vanadium
     ports:
       - "4444:4444"
