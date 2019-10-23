@@ -25,8 +25,10 @@ public class DriverBase {
 				case "chrome":
 					System.setProperty("webdriver.chrome.driver",
 						"./src/main/resources/drivers/chromedriver-mac-64bit");
-					if (Boolean.valueOf(REMOTE)) {
-						driver = initRemoteDriver(DesiredCapabilities.chrome());
+					if (Boolean.parseBoolean(REMOTE)) {
+						DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+						capabilities.setCapability("enableVNC", true);
+						driver = initRemoteDriver(capabilities);
 					} else {
 						driver = new ChromeDriver();
 					}
@@ -36,7 +38,7 @@ public class DriverBase {
 				case "firefox":
 					System.setProperty("webdriver.gecko.driver",
 						"./src/main/resources/drivers/geckodriver-mac-64bit");
-					if (Boolean.valueOf(REMOTE)) {
+					if (Boolean.parseBoolean(REMOTE)) {
 						driver = initRemoteDriver(DesiredCapabilities.firefox());
 					} else {
 						driver = new FirefoxDriver();

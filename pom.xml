@@ -103,15 +103,15 @@
                             <name>chromedriver</name>
                             <platform>mac</platform>
                             <bit>64</bit>
-                            <version>76.0.3809.126</version>
-                            <url>https://chromedriver.storage.googleapis.com/76.0.3809.126/chromedriver_mac64.zip</url>
+                            <version>78.0.3904.70</version>
+                            <url>https://chromedriver.storage.googleapis.com/78.0.3904.70/chromedriver_mac64.zip</url>
                         </driver>
                         <driver>
                             <name>chromedriver</name>
                             <platform>linux</platform>
                             <bit>64</bit>
-                            <version>76.0.3809.126</version>
-                            <url>https://chromedriver.storage.googleapis.com/76.0.3809.126/chromedriver_linux64.zip</url>
+                            <version>78.0.3904.70</version>
+                            <url>https://chromedriver.storage.googleapis.com/78.0.3904.70/chromedriver_linux64.zip</url>
                         </driver>
                     </drivers>
                 </configuration>
