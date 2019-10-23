@@ -3,7 +3,34 @@
 version: '2'
 services:
 
-  chrome:
+  chrome1:
+    image: selenium/node-chrome:3.141.59-vanadium
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+
+  chrome2:
+    image: selenium/node-chrome:3.141.59-vanadium
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+
+  chrome3:
+    image: selenium/node-chrome:3.141.59-vanadium
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+
+  chrome4:
     image: selenium/node-chrome:3.141.59-vanadium
     volumes:
       - /dev/shm:/dev/shm
