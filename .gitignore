@@ -1,4 +1,3 @@
-
 # IntelliJ #
 ############
 *.iml
@@ -11,3 +10,4 @@ target
 # Binary Downloads #
 ####################
 /src/main/resources/drivers/
+allure-results/
