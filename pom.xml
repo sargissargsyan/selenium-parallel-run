@@ -17,7 +17,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <selenium.version>3.141.59</selenium.version>
-        <testng.version>6.14.3</testng.version>
+        <testng.version>7.7.0</testng.version>
         <log4j.version>1.2.17</log4j.version>
         <!--Plugin Versions-->
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
